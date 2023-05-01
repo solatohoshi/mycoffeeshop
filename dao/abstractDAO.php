@@ -13,13 +13,8 @@ class abstractDAO {
     // Host address for the database
     protected static $DB_HOST = "localhost";// or 127.0.0.1
 	
-	// For this example, if you only have one instance of mysql you may discard the port
-	// we usually get the port and host from environmental variable as best practice 
-	// Never leave IPs or ports in code - this is ommitted here for simplicity
-	// I have 2 instance of mySQL installed that's why I have to use port number
-	
 	/* Port number on the host */
-    protected static $DB_PORT = 3307;// your port can be different than mine
+    protected static $DB_PORT = 3307;
     /* Database username */
     protected static $DB_USERNAME = "appuser";
     /* Database password */

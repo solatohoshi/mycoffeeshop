@@ -11,6 +11,24 @@ class productsDAO extends abstractDAO {
             throw $e;
         }
     }  
+
+    public function login($username, $password) {
+        $stmt = $this->mysqli->prepare("SELECT id, username FROM adminlogin WHERE username = ? AND password = ?");
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $stmt->bind_result($id, $username);
+        
+        if($stmt->fetch()) {
+            // If the user was found, set a session variable to indicate that they are logged in
+            session_start();
+            $_SESSION['user_id'] = $id;
+            $_SESSION['username'] = $username;
+            return true;
+        } else {
+            // If the user was not found, return false
+            return false;
+        }
+    }
     
     public function getProduct($productId){
         $query = 'SELECT * FROM products WHERE id = ?';

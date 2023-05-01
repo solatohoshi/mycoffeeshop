@@ -96,7 +96,7 @@ if(empty($input_date)){
     if(empty($name_err) && empty($img_path_err) && empty($description_err) && empty($date_err) && empty($price_err)){
         $product = new Product($id, $name, $img_path, $description, $date, $price);
         $result = $productsDAO->updateProduct($product);        
-		header("refresh:2; url=index.php");
+		header("refresh:2; url=dashboard.php");
 		echo '<br><h6 style="text-align:center">' . $result . '</h6>';
         // Close connection
         $productsDAO->getMysqli()->close();
@@ -185,7 +185,7 @@ if(empty($input_date)){
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>        

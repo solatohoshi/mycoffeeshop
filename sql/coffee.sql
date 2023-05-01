@@ -11,6 +11,17 @@ USE coffeeshop;
 -- Table structure for table `products`
 --
 
+CREATE TABLE IF NOT EXISTS `adminlogin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+--
+-- Dumping data for table `adminlogin`
+--
+INSERT INTO `adminlogin` (`id`, `username`, `password`) VALUES (NULL, 'admin', '123');
+
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,

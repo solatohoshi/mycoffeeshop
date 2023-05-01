@@ -95,7 +95,7 @@ if(empty($input_date)){
         $productsDAO = new productsDAO();    
         $product = new Product(0, $name, $img_path, $description, $date, $price);
         $addResult = $productsDAO->addProduct($product);        
-        header( "refresh:2; url=index.php" ); 
+        header( "refresh:2; url=dashboard.php" ); 
 		echo '<br><h6 style="text-align:center">' . $addResult . '</h6>';   
         // Close connection
         $productsDAO->getMysqli()->close();
@@ -152,7 +152,7 @@ if(empty($input_date)){
                             <span class="invalid-feedback"><?php echo $price_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>        
